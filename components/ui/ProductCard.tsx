@@ -10,11 +10,11 @@ export default function ProductCard({ product }: { product: Product }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+      className=" bg-white overflow-hidden shadow-md hover:shadow-lg transition-shadow"
     >
       <Link href={`/products/${product.id}`}>
         <div className="p-6">
-          <div className="aspect-square bg-gray-100 rounded-lg mb-4 overflow-hidden">
+          <div className="aspect-square bg-gray-100 mb-4 overflow-hidden">
             {/* Replace with actual image */}
             <div className="w-full h-full flex items-center justify-center bg-gray-200">
               <span className="text-gray-400">Product Image 1</span>

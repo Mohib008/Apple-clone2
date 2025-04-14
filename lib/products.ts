@@ -51,4 +51,18 @@ export const products: Product[] = [
       "Up to 36 hours of battery life",
     ],
   },
+  {
+    id: "4",
+    name: "Apple Watch Ultra 2",
+    description: "Next-level adventure.",
+    price: 799,
+    image: "/watch-ultra.jpg",
+    colors: ["#2A2A2A", "#E9E9E5"],
+    highlights: [
+      "49mm titanium case",
+      "Dual-frequency GPS",
+      "Depth gauge with water temperature sensor",
+      "Up to 36 hours of battery life",
+    ],
+  },
 ];
