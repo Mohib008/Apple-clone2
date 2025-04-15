@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { products } from "@/lib/products";
 import Header from "@/components/Header";
+import Image from "next/image";
 
 export default function ProductPage({ params }: { params: { id: string } }) {
   const product = products.find((p) => p.id === params.id);
@@ -15,8 +16,15 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
       <section className="pt-24 pb-12 px-4 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="aspect-square bg-gray-100 rounded-xl overflow-hidden">
-            {/* Replace with actual image */}
+          <div className="aspect-square bg-gray-100 rounded-xl overflow-hidden relative">
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              className="object-cover transition-transform duration-300 hover:scale-105 overflow-hidden"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={false}
+            />
             <div className="w-full h-full flex items-center justify-center bg-gray-200">
               <span className="text-gray-400 text-2xl">Product Image</span>
             </div>

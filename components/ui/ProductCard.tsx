@@ -3,6 +3,7 @@
 import { Product } from "@/lib/products";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
@@ -14,8 +15,15 @@ export default function ProductCard({ product }: { product: Product }) {
     >
       <Link href={`/products/${product.id}`}>
         <div className="p-6">
-          <div className="aspect-square bg-gray-100 mb-4 overflow-hidden">
-            {/* Replace with actual image */}
+          <div className="aspect-square bg-gray-100 mb-4 overflow-hidden relative">
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              className="object-cover overeflow-hidden"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={false}
+            />
             <div className="w-full h-full flex items-center justify-center bg-gray-200">
               <span className="text-gray-400">Product Image 1</span>
             </div>
